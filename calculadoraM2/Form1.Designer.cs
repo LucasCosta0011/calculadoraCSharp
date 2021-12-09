@@ -65,6 +65,7 @@ namespace calculadoraM2
             this.btnDivMult.TabIndex = 20;
             this.btnDivMult.Text = "1/x";
             this.btnDivMult.UseVisualStyleBackColor = true;
+            this.btnDivMult.Click += new System.EventHandler(this.btnDivMult_Click);
             // 
             // btnPotencia
             // 
@@ -74,6 +75,7 @@ namespace calculadoraM2
             this.btnPotencia.TabIndex = 21;
             this.btnPotencia.Text = "x²";
             this.btnPotencia.UseVisualStyleBackColor = true;
+            this.btnPotencia.Click += new System.EventHandler(this.btnPotencia_Click);
             // 
             // btnRaiz
             // 
@@ -83,6 +85,7 @@ namespace calculadoraM2
             this.btnRaiz.TabIndex = 22;
             this.btnRaiz.Text = "RQ";
             this.btnRaiz.UseVisualStyleBackColor = true;
+            this.btnRaiz.Click += new System.EventHandler(this.btnRaiz_Click);
             // 
             // btnDividir
             // 
@@ -222,6 +225,7 @@ namespace calculadoraM2
             this.btnMaisMenos.TabIndex = 36;
             this.btnMaisMenos.Text = "+/-";
             this.btnMaisMenos.UseVisualStyleBackColor = true;
+            this.btnMaisMenos.Click += new System.EventHandler(this.btnMaisMenos_Click);
             // 
             // btn0
             // 
@@ -241,6 +245,7 @@ namespace calculadoraM2
             this.btnVirgula.TabIndex = 38;
             this.btnVirgula.Text = ",";
             this.btnVirgula.UseVisualStyleBackColor = true;
+            this.btnVirgula.Click += new System.EventHandler(this.btnVirgula_Click);
             // 
             // btnCalcular
             // 
@@ -260,6 +265,7 @@ namespace calculadoraM2
             this.button4.TabIndex = 40;
             this.button4.Text = "<-";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnClear
             // 
@@ -289,6 +295,7 @@ namespace calculadoraM2
             this.btnRestoDiv.TabIndex = 43;
             this.btnRestoDiv.Text = "%";
             this.btnRestoDiv.UseVisualStyleBackColor = true;
+            this.btnRestoDiv.Click += new System.EventHandler(this.btnRestoDiv_Click);
             // 
             // txtBoxResultado
             // 

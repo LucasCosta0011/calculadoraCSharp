@@ -15,6 +15,9 @@ namespace calculadoraM2
     {
         decimal valor1 = 0, valor2 = 0;
         string operacao = "";
+        string replace;
+        string decremento;
+        float tamanho;
         public Form1()
         {
             InitializeComponent();
@@ -72,34 +75,62 @@ namespace calculadoraM2
 
         private void btnDividir_Click(object sender, EventArgs e)
         {
-            valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
-            txtBoxResultado.Text = "";
-            operacao = "Dividir";
-            lblOperacao.Text = "/";
+            if (txtBoxResultado.Text == "")
+            {
+                MessageBox.Show("Coloque o primeiro número", "Solução:");
+            }
+            else
+            {
+                valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
+                txtBoxResultado.Text = "";
+                operacao = "Dividir";
+                lblOperacao.Text = "/";
+            }
         }
 
         private void btnMultiplicar_Click(object sender, EventArgs e)
         {
-            valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
-            txtBoxResultado.Text = "";
-            operacao = "Multiplicar";
-            lblOperacao.Text = "x";
+            if (txtBoxResultado.Text == "")
+            {
+                MessageBox.Show("Coloque o primeiro número", "Solução:");
+            }
+            else
+            {
+                valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
+                txtBoxResultado.Text = "";
+                operacao = "Multiplicar";
+                lblOperacao.Text = "x";
+            }
         }
 
         private void btnSubtrair_Click(object sender, EventArgs e)
         {
-            valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
-            txtBoxResultado.Text = "";
-            operacao = "Subtrair";
-            lblOperacao.Text = "-";
+            if (txtBoxResultado.Text == "")
+            {
+                MessageBox.Show("Coloque o primeiro número", "Solução:");
+            }
+            else
+            {
+                valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
+                txtBoxResultado.Text = "";
+                operacao = "Subtrair";
+                lblOperacao.Text = "-";
+            }
         }
 
         private void btnSomar_Click(object sender, EventArgs e)
         {
-            valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
-            txtBoxResultado.Text = "";
-            operacao = "Somar";
-            lblOperacao.Text = "+";
+            if (txtBoxResultado.Text == "")
+            {
+                MessageBox.Show("Coloque o primeiro número", "Solução:");
+            }
+            else
+            {
+                valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
+                txtBoxResultado.Text = "";
+                operacao = "Somar";
+                lblOperacao.Text += "+";
+            }
         }
 
         private void btnCe_Click(object sender, EventArgs e)
@@ -118,27 +149,138 @@ namespace calculadoraM2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void btnRaiz_Click(object sender, EventArgs e)
+        {
+            if (txtBoxResultado.Text == "")
+            {
+                MessageBox.Show("Coloque o primeiro número", "Solução:");
+            }
+            else
+            {
+                valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
+                operacao = "Raiz";
+                lblOperacao.Text = "RQ";
+            }
+        }
+
+        private void btnPotencia_Click(object sender, EventArgs e)
+        {
+            if (txtBoxResultado.Text == "")
+            {
+                MessageBox.Show("Coloque o primeiro número", "Solução:");
+            }
+            else
+            {
+                valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
+                txtBoxResultado.Text = "";
+                lblOperacao.Text = "x²";
+                operacao = "Potencia";
+            }
+        }
+
+        private void btnVirgula_Click(object sender, EventArgs e)
+        {
+            txtBoxResultado.Text += ",";
+            replace = txtBoxResultado.Text.Replace(",", ".");
+            txtBoxResultado.Text = replace;
+        }
+
+        private void btnMaisMenos_Click(object sender, EventArgs e)
+        {
+            if (txtBoxResultado.Text == "")
+            {
+                MessageBox.Show("Coloque o primeiro número", "Solução:");
+            }
+            else
+            {
+                valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
+                lblOperacao.Text = "+/-";
+                txtBoxResultado.Text = Convert.ToString(valor1 * -1);
+            }
+        }
+
+        private void btnDivMult_Click(object sender, EventArgs e)
+        {
+            if (txtBoxResultado.Text == "")
+            {
+                MessageBox.Show("Coloque o primeiro número", "Solução:");
+            }
+            else 
+            {
+                valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
+                valor1 = 1 / valor1;
+                txtBoxResultado.Text = Convert.ToString(valor1);
+            }
+        }
+
+        private void btnRestoDiv_Click(object sender, EventArgs e)
+        {
+            if (txtBoxResultado.Text == "")
+            {
+                MessageBox.Show("Coloque o primeiro número", "Solução:");
+            }
+            else
+            {
+                valor1 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
+                txtBoxResultado.Text = "";
+                lblOperacao.Text = "%";
+                operacao = "Resto";
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (txtBoxResultado.Text == "")
+            {
+                MessageBox.Show("Coloque um número para poder apagar", "Solução:");
+            }
+            else
+            {
+                tamanho = txtBoxResultado.Text.Length;
+                txtBoxResultado.Text = txtBoxResultado.Text.Substring(0, (int)(tamanho - 1));
+            }
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            valor2 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
-            if(operacao == "Somar")
+            if (txtBoxResultado.Text == "")
             {
-                txtBoxResultado.Text = Convert.ToString(valor1 + valor2);
-            } 
-            else if(operacao == "Subtrair")
-            {
-                txtBoxResultado.Text = Convert.ToString( valor1 - valor2);
-            } 
-            else if(operacao == "Multiplicar")
-            {
-                txtBoxResultado.Text = Convert.ToString(valor1 * valor2);
+                MessageBox.Show("Coloque o primeiro número", "Solução:");
             }
-            else if(operacao == "Dividir")
+            else
             {
-                txtBoxResultado.Text = Convert.ToString(valor1 / valor2);
+                valor2 = decimal.Parse(txtBoxResultado.Text, CultureInfo.InvariantCulture);
+                if (operacao == "Somar")
+                {
+                    txtBoxResultado.Text = Convert.ToString(valor1 + valor2);
+                }
+                else if (operacao == "Subtrair")
+                {
+                    txtBoxResultado.Text = Convert.ToString(valor1 - valor2);
+                }
+                else if (operacao == "Multiplicar")
+                {
+                    txtBoxResultado.Text = Convert.ToString(valor1 * valor2);
+                }
+                else if (operacao == "Dividir")
+                {
+                    txtBoxResultado.Text = Convert.ToString(valor1 / valor2);
+                }
+                else if (operacao == "Raiz")
+                {
+                    txtBoxResultado.Text = Convert.ToString(Math.Sqrt((double)valor1));
+                }
+                else if (operacao == "Potencia")
+                {
+                    txtBoxResultado.Text = Convert.ToString(Math.Pow((double)valor1, (double)valor2));
+                }
+                else if (operacao == "Resto")
+                {
+                    txtBoxResultado.Text = Convert.ToString(valor1 % valor2);
+                }
             }
         }
     }
