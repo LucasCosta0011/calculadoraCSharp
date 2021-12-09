@@ -1,7 +1,7 @@
 ﻿
 namespace calculadoraM2
 {
-    partial class Form1
+    partial class calculator
     {
         /// <summary>
         ///  Required designer variable.
@@ -318,7 +318,7 @@ namespace calculadoraM2
             this.lblOperacao.Size = new System.Drawing.Size(0, 28);
             this.lblOperacao.TabIndex = 45;
             // 
-            // Form1
+            // calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -349,8 +349,8 @@ namespace calculadoraM2
             this.Controls.Add(this.btnRaiz);
             this.Controls.Add(this.btnPotencia);
             this.Controls.Add(this.btnDivMult);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "calculator";
+            this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

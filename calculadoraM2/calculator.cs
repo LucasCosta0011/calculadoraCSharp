@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace calculadoraM2
 {
-    public partial class Form1 : Form
+    public partial class calculator : Form
     {
         decimal valor1 = 0, valor2 = 0;
         string operacao = "";
         string replace;
         string decremento;
         float tamanho;
-        public Form1()
+        public calculator()
         {
             InitializeComponent();
         }
